@@ -25,10 +25,10 @@ public class Droodle extends Activity {
 				d.setX(x);
 				d.setY(y);
 				d.invalidate(
-						(int) x-1,
-						(int) y-1,
-						(int) x+1,
-						(int) y+1);
+						Math.round(x)-1,
+						Math.round(y)-1,
+						Math.round(x)+1,
+						Math.round(y)+1);
 				return true;
 			}
 		});
