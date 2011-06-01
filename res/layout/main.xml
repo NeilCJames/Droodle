@@ -4,15 +4,16 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<TextView
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
-<view 
-	class="com.studio_akahige.droodle.Doodle"
-	android:id="@+id/doodle"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
+    <ToggleButton
+    	android:id="@+id/eraserToggle" 
+    	android:textOn="Eraser"
+    	android:textOff="Eraser"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" />
+	<view 
+		class="com.studio_akahige.droodle.Doodle"
+		android:id="@+id/doodle"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
 	/>
 </LinearLayout>

@@ -55,4 +55,8 @@ public class Doodle extends View {
 		p.setStrokeWidth(10.0f);
 		p.setStrokeCap(Paint.Cap.ROUND);
 	}
+	
+	public void setEraser(boolean b) {
+		eraser = b;
+	}
 }
