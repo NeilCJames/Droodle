@@ -12,6 +12,7 @@ public class Doodle extends View {
 	private Paint p = new Paint();
 	private float x;
 	private float y;
+	private boolean eraser = false;
 	
 	public Doodle(Context context) {
 		super(context);
@@ -33,7 +34,8 @@ public class Doodle extends View {
 	
 	public void onDraw(Canvas c) {
 		// draw a point on the screen
-		c.drawPoint(x, y, p);
+		if (eraser) return;
+		else c.drawPoint(x, y, p);
 	}
 	
 	public void setX(float rawX) {
