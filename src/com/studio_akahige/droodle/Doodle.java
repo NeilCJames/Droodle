@@ -10,6 +10,7 @@ import android.view.View;
 public class Doodle extends View {
 
 	private Paint p = new Paint();
+	private Paint eraserPaint = new Paint();
 	private float x;
 	private float y;
 	private boolean eraser = false;
@@ -34,7 +35,9 @@ public class Doodle extends View {
 	
 	public void onDraw(Canvas c) {
 		// draw a point on the screen
-		if (eraser) return;
+		initializePaint();
+		if (eraser) c.drawRect(x-10, y-10, x+9, y+9, eraserPaint);
+		//else c.drawRect(x-1,y-1,x+1,y+1,p);
 		else c.drawPoint(x, y, p);
 	}
 	
@@ -52,8 +55,14 @@ public class Doodle extends View {
 	
 	private void initializePaint() {
 		p.setColor(Color.YELLOW);
-		p.setStrokeWidth(10.0f);
-		p.setStrokeCap(Paint.Cap.ROUND);
+		p.setStrokeWidth(5);
+		p.setStrokeCap(Paint.Cap.SQUARE);
+		p.setStyle(Paint.Style.STROKE);
+		eraserPaint.setColor(Color.BLACK);
+		eraserPaint.setStrokeWidth(50);
+		eraserPaint.setStrokeCap(Paint.Cap.SQUARE);
+		eraserPaint.setAlpha(255);
+		eraserPaint.setStyle(Paint.Style.STROKE);
 	}
 	
 	public void setEraser(boolean b) {
