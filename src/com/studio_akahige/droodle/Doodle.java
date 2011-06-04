@@ -52,7 +52,7 @@ public class Doodle extends View {
 	}
 	
 	private void initializePaint() {
-		p.setColor(Color.YELLOW);
+		p.setColor(Color.BLUE);
 		p.setStrokeWidth(5);
 		p.setStrokeCap(Paint.Cap.SQUARE);
 		p.setStyle(Paint.Style.STROKE);
@@ -64,5 +64,39 @@ public class Doodle extends View {
 	
 	public void setEraser(boolean b) {
 		eraser = b;
+	}
+	
+	public float getEraserStroke() {
+		return eraserPaint.getStrokeWidth();
+	}
+	
+	public void setBrushColor(int c) {
+		switch (c) {
+		case 0:
+			p.setColor(Color.BLUE);
+			break;
+		case 1:
+			p.setColor(Color.CYAN);
+			break;
+		case 2:
+			p.setColor(Color.GRAY);
+			break;
+		case 3:
+			p.setColor(Color.GREEN);
+			break;
+		case 4:
+			p.setColor(Color.MAGENTA);
+			break;
+		case 5:
+			p.setColor(Color.RED);
+			break;
+		case 6:
+			p.setColor(Color.WHITE);
+			break;
+		case 7:
+			p.setColor(Color.YELLOW);
+			break;
+		}
+		return;
 	}
 }

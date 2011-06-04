@@ -2,15 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-    <ToggleButton
-    	android:id="@+id/eraserToggle" 
-    	android:textOn="Eraser"
-    	android:textOff="Eraser"
-    	android:layout_width="wrap_content"
-    	android:layout_height="wrap_content" />
-	<view 
+    android:layout_height="fill_parent" >
+    <LinearLayout
+    	android:orientation="horizontal"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content">
+    	<ToggleButton
+    		android:id="@+id/eraserToggle" 
+    		android:textOn="Eraser"
+    		android:textOff="Eraser"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content" />
+    	<Spinner
+    		android:id="@+id/colorSpinner"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:prompt="@string/color_prompt" />
+	</LinearLayout>
+    <view 
 		class="com.studio_akahige.droodle.Doodle"
 		android:id="@+id/doodle"
 		android:layout_width="fill_parent"
