@@ -35,9 +35,7 @@ public class Doodle extends View {
 	
 	public void onDraw(Canvas c) {
 		// draw a point on the screen
-		initializePaint();
-		if (eraser) c.drawRect(x-10, y-10, x+9, y+9, eraserPaint);
-		//else c.drawRect(x-1,y-1,x+1,y+1,p);
+		if (eraser) c.drawPoint(x, y, eraserPaint);
 		else c.drawPoint(x, y, p);
 	}
 	
@@ -61,7 +59,6 @@ public class Doodle extends View {
 		eraserPaint.setColor(Color.BLACK);
 		eraserPaint.setStrokeWidth(50);
 		eraserPaint.setStrokeCap(Paint.Cap.SQUARE);
-		eraserPaint.setAlpha(255);
 		eraserPaint.setStyle(Paint.Style.STROKE);
 	}
 	
