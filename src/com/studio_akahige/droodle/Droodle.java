@@ -48,7 +48,7 @@ public class Droodle extends Activity {
 			public void onProgressChanged(SeekBar seekBar, int progress,
 					boolean fromUser) {
 				// TODO Auto-generated method stub
-				d.setStrokeWidth(progress);
+				d.setStrokeWidth(progress+5);
 				return;
 			}
 		});
