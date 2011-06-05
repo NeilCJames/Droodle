@@ -6,9 +6,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Spinner;
 import android.widget.ToggleButton;
 
@@ -22,6 +24,36 @@ public class Droodle extends Activity {
         final ToggleButton etb = (ToggleButton) findViewById(R.id.eraserToggle);
         final Doodle d = (Doodle) findViewById(R.id.doodle);
         final Spinner s = (Spinner) findViewById(R.id.colorSpinner);
+        final SeekBar sb = (SeekBar) findViewById(R.id.brushWidth);
+        
+        // Brush Width Change Event Handler
+        sb.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+			
+        	/** Not worried about managing app while SeekBar being manipulated,
+        	/   so these abstracts just return immediately */
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				// Do nothing
+				return;
+			}
+			
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				// Do nothing
+				return;
+			}
+			
+			// d.setStrokeWidth handles the int->float cast
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress,
+					boolean fromUser) {
+				// TODO Auto-generated method stub
+				d.setStrokeWidth(progress);
+				return;
+			}
+		});
+        
+        // ArrayAdapter to build drop-down menu from string-array
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, 
         		R.array.colors, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

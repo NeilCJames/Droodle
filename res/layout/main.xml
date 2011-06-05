@@ -19,6 +19,12 @@
     		android:layout_height="wrap_content"
     		android:prompt="@string/color_prompt" />
 	</LinearLayout>
+	<SeekBar 
+		android:id="@+id/brushWidth"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:max="50"
+		android:progress="0" />
     <view 
 		class="com.studio_akahige.droodle.Doodle"
 		android:id="@+id/doodle"

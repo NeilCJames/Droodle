@@ -51,9 +51,14 @@ public class Doodle extends View {
 		return p.getStrokeWidth();
 	}
 	
+	public void setStrokeWidth(int w) {
+		p.setStrokeWidth((float)w);
+		return;
+	}
+	
 	private void initializePaint() {
 		p.setColor(Color.BLUE);
-		p.setStrokeWidth(5);
+		p.setStrokeWidth(0);
 		p.setStrokeCap(Paint.Cap.SQUARE);
 		p.setStyle(Paint.Style.STROKE);
 		eraserPaint.setColor(Color.BLACK);
